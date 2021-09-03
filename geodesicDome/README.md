@@ -7,6 +7,6 @@ However I found out this geodesic dome had its unique rules.
 This made me study the origin of the geodesic dome and challenge to make a system to make a geodesic dome.
 
 here's the reference image<br>
-<img src="https://github.com/JounKim/JounKim.github.io/blob/main/geodesicDome/referenceImage.jpg">
+<img src="JounKim.github.io/geodesicDome/referenceImage.jpg">
 
 reference: https://www.o2treehouse.com/honey-sphere
