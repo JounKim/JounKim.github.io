@@ -16,7 +16,7 @@
   
   <body style="margin: 0px; width: 100vw; height: 100vh;">
     <a-scene embedded arjs="sourceType: webcam;">
-      <a-marker type="pattern" url="https://github.com/JounKim/JounKim.github.io/blob/main/NameCard/LieulMieum.patt">
+      <a-marker type="pattern" url="./LieulMieum.patt">
        
         <!-- where the model goes in -->
         <a-entity
@@ -34,6 +34,8 @@
         </a-box>
 
       </a-marker>
+
+
       <a-marker preset="hiro">
         <a-box
           scale="0.2 0.2 0.2"
@@ -41,8 +43,9 @@
           position="0 0.5 0"
           material="color: red;">
         </a-box>
-        
+
       </a-marker>
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
