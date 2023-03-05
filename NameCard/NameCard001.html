@@ -16,7 +16,8 @@
   
   <body style="margin: 0px; width: 100vw; height: 100vh;">
     <a-scene embedded arjs="sourceType: webcam;">
-      <a-marker preset="hiro">
+      <a-marker type='pattern' patternUrl='url("./LieulMieum.patt")'>
+       
         <!-- where the model goes in -->
         <a-entity
             position="0 0 0"
