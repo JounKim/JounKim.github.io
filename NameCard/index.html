@@ -311,53 +311,58 @@
             <!-- Example of how to declare a skin for a 3D model asset. -->
             <!--<a-asset-item id="3DModel-mtl" src="3DModel.mtl"></a-asset-item>-->
             
-        </a-assets>"
+        </a-assets>
+
+        <a-marker type="pattern" url="asset/marker.patt">
+            <!-- Create a anchor to attach your augmented reality -->
+            <a-anchor hit-testing-enabled='true'>
+
+                <!-- Adding augmented reality items here -->
+
+                <!--text fit onto a plane -->
+                <a-plane
+                id = "centerTextLabel"
+                geometry="primitive: plane; width: 1; height: 1; height: auto"
+                material="opacity: 0.5; color: white;"
+                position='0 0.25 0'>
+                <a-entity id="planeText" position='0.8 0 0' rotation='290 0 0' scale='2 2 2' text="value: AR Pong" align-"center"></a-entity>
+                </a-plane>
+                <a-plane
+                id = "player1Label"
+                geometry="primitive: plane; width: 1; height: 1; height: auto"
+                material="opacity: 0.5; color: white;" 
+                position='0 0 1.2'>
+                <a-entity id="player1ScoreText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 1" align-"center"></a-entity>
+                </a-plane>
+                <a-plane
+                id = "player2Label"
+                geometry="primitive: plane; width: 1; height: 1; height: auto"
+                material="opacity: 0.5; color: white;" 
+                position='0 0 -1.2'>
+                <a-entity id="player2ScoreText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 2" align-"center"></a-entity>
+                </a-plane>
+
+                <!-- Basic Box -->             
+                <!-- see: https://aframe.io/docs/0.8.0 -->
+                <!-- Bumpers -->
+                <a-box id="leftBumper" rotation="0 0 0" position='-1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
+                <a-box id="rightBumper" rotation="0 180 0" position='1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
+                <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
+                <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
+                <!-- Paddles -->
+                <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.86' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
+                <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.86' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
+
+                <!-- Basic Sphere --> 
+                <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
+                <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>
+
+            </a-anchor>
+
+        </a-marker>
 
 
-      <!-- Create a anchor to attach your augmented reality -->
-      <a-anchor hit-testing-enabled='true'>
-
-        <!-- Adding augmented reality items here -->
-
-        <!--text fit onto a plane -->
-        <a-plane
-          id = "centerTextLabel"
-          geometry="primitive: plane; width: 1; height: 1; height: auto"
-          material="opacity: 0.5; color: white;"
-          position='0 0.25 0'>
-          <a-entity id="planeText" position='0.8 0 0' rotation='290 0 0' scale='2 2 2' text="value: AR Pong" align-"center"></a-entity>
-        </a-plane>
-        <a-plane
-          id = "player1Label"
-          geometry="primitive: plane; width: 1; height: 1; height: auto"
-          material="opacity: 0.5; color: white;" 
-          position='0 0 1.2'>
-          <a-entity id="player1ScoreText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 1" align-"center"></a-entity>
-        </a-plane>
-        <a-plane
-          id = "player2Label"
-          geometry="primitive: plane; width: 1; height: 1; height: auto"
-          material="opacity: 0.5; color: white;" 
-          position='0 0 -1.2'>
-          <a-entity id="player2ScoreText" position="0 0 0 " rotation='290 0 0' scale='2 2 2' text="value: Player 2" align-"center"></a-entity>
-        </a-plane>
-
-        <!-- Basic Box -->             
-        <!-- see: https://aframe.io/docs/0.8.0 -->
-        <!-- Bumpers -->
-        <a-box id="leftBumper" rotation="0 0 0" position='-1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
-        <a-box id="rightBumper" rotation="0 180 0" position='1 0.05 0' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:blue;'></a-box>
-        <a-box id="topBumper" rotation="0 90 0" position='0 0.05 -1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
-        <a-box id="bottomBumper" rotation="0 270 0" position='0 0.05 1' depth="1.95" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
-        <!-- Paddles -->
-        <a-box id="topPaddle" rotation="0 90 0" position='0 0.05 -0.86' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:purple;'></a-box>
-        <a-box id="bottomPaddle" rotation="0 270 0" position='0 0.05 0.86' depth="0.49" height="0.1" width="0.1" material='opacity: 0.9; side:double; color:green;'></a-box>
-
-        <!-- Basic Sphere --> 
-        <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
-        <a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>
-
-      </a-anchor>
+      
 
       <!-- Define a static camera -->
       <a-camera-static/>
